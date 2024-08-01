@@ -9,7 +9,7 @@ let server;
 // Conectar a la base de datos y luego iniciar el servidor
 sequelize.sync({ force: true }).then(() => {
   console.log('Conectado a la base de datos');
-  server = app.listen(PORT, () => {
+  server = app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
   });
 }).catch(err => {
